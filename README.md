@@ -39,7 +39,7 @@ The implementations of self-training with different selection criteria as detail
 * [Utilities for PPP](R/utils_diff_marg_likelihood.R)
 
 
-In order to reproduce the papers' key results (and visualizations thereof) further download these scripts and save in respective folder:
+In order to reproduce results (and visualizations thereof) in Appendix A.1.2 "Illustrating Experiments" of our paper "Reciprocal Learning" further download these scripts and save in respective folder:
 
 * in folder analysis/
     * [analysis and visualization](analyze/analyze.R) 
@@ -48,6 +48,7 @@ In order to reproduce the papers' key results (and visualizations thereof) furth
 * in folder benchmarks/experiments/
     * [experiments with likelihood (max-max)](benchmarks/experiments/benchmark-dml-pred.R)
     * [experiments with PPP (bayes-opt)](benchmarks/experiments/benchmark-dml-pred-ext.R)
+    * [experiments with **regularized** PPP (bayes-opt)](benchmarks/experiments/benchmark-dml-pred-reg.R)
     * [experiments with supervised baseline](benchmarks/experiments/_benchmark-standard-supervised.R)
     * [experiments with predictive variance](benchmarks/experiments/_benchmark-standard-self-training.R)
     * [experiments with probability score](benchmarks/experiments/_benchmark-standard-self-training_conf.R)
