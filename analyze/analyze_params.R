@@ -50,12 +50,18 @@ n_imp = ((n - n_test) * share_unlabeled) %>% round()
 
 load(paste(getwd(),"/results/diff_marg_likelihood_pred_", share_unlabeled,"_",data, "_n=", as.character(n), "_p=", as.character(p), sep=""))
 likelihood_params <- saved_results$parameters
+likelihood_params_sd <- saved_results$parameters_sd
+
+
 
 load(paste(getwd(),"/results/diff_marg_likelihood_pred_ext_",share_unlabeled,"_",data, "_n=", as.character(n), "_p=", as.character(p), sep=""))
 Bayes_crit_params <- saved_results$parameters
+Bayes_crit_params_sd <- saved_results$parameters_sd
+
 
 load(paste(getwd(),"/results/diff_marg_likelihood_pred_reg_",share_unlabeled,"_",data, "_n=", as.character(n), "_p=", as.character(p), sep=""))
 Bayes_crit_reg_params <- saved_results$parameters
+Bayes_crit_reg_params_sd <- saved_results$parameters_sd
 
 
 
@@ -73,10 +79,12 @@ Bayes_crit_reg_params <- saved_results$parameters
 
 load(paste(getwd(),"/results/standard_self_",share_unlabeled,"_",data, "_n=", as.character(n), "_p=", as.character(p), sep=""))
 pred_var_params <- saved_results$parameters
+pred_var_params_sd <- saved_results$parameters_sd
 
 
 load(paste(getwd(),"/results/standard_self_conf_",share_unlabeled,"_",data, "_n=", as.character(n), "_p=", as.character(p), sep=""))
 prob_score_params <- saved_results$parameters
+prob_score_params_sd <- saved_results$parameters_sd
 
 
 

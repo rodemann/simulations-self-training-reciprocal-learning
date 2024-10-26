@@ -104,6 +104,7 @@ CI_fly <- apply(ind_fly, 1, get_CI_vec, alpha = 0.05, N=N)
 
 # Initialize a list to store results for each iteration
 iteration_results <- vector("list", n_imp)
+iteration_results_sd <- vector("list", n_imp)
 
 # Loop through each iteration
 for (iteration in 1:n_imp) {
@@ -116,14 +117,20 @@ for (iteration in 1:n_imp) {
   # Calculate the mean for each parameter across all restarts
   iteration_mean <- colMeans(iteration_df)
   
+  # Calculate standard deviation
+  iteration_sd <- apply(iteration_df, 2, sd)
+  
   # Store the mean values in the results list
   iteration_results[[iteration]] <- iteration_mean
+  
+  # Store the sd values in the results list
+  iteration_results_sd[[iteration]] <- iteration_sd
 }
 
 # Convert the list to a data frame for better readability
 params_means <- do.call(rbind, iteration_results)
 #colnames(iteration_means_df) <- c("Intercept", "feature_1", "feature_2", "feature_3")
-
+params_sd <- do.call(rbind, iteration_results_sd)
 
 
 saved_results <- list("Inductive on-the-fly mean" = mean_ind_fly,
@@ -133,7 +140,8 @@ saved_results <- list("Inductive on-the-fly mean" = mean_ind_fly,
                       "Transductive CI" = CI_trans,
                       "Transductive n_test" = nrow(true_labels),
                       "Method" = method,
-                      "parameters" =  params_means
+                      "parameters" =  params_means,
+                      "parameters_sd" =  params_sd
                   
 )
 
