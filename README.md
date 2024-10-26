@@ -26,7 +26,7 @@ on
 
 ### Setup
 
-First and foremost, please install all dependencies by sourcing [this file](_setup_session.R).
+First and foremost, clone this repo and please install all dependencies by sourcing [this file](_setup_session.R).
 
 The implementations of self-training with different selection criteria as detailed in the paper are in folder "R":
 
@@ -38,32 +38,24 @@ The implementations of self-training with different selection criteria as detail
 * [Likelihood (max-max)](R/diff_marg_likelihood_pred.R)
 * [Utilities for PPP](R/utils_diff_marg_likelihood.R)
 
+Experimental setups are in these files: 
 
-In order to reproduce results (and visualizations thereof) in Appendix A.1.2 "Illustrating Experiments" of our paper "Reciprocal Learning" further download these scripts and save in respective folder:
+* [experiments with likelihood (max-max)](benchmarks/experiments/benchmark-dml-pred.R)
+* [experiments with PPP (bayes-opt)](benchmarks/experiments/benchmark-dml-pred-ext.R)
+* [experiments with **regularized** PPP (bayes-opt)](benchmarks/experiments/benchmark-dml-pred-reg.R)
+* [experiments with supervised baseline](benchmarks/experiments/_benchmark-standard-supervised.R)
+* [experiments with predictive variance](benchmarks/experiments/_benchmark-standard-self-training.R)
+* [experiments with probability score](benchmarks/experiments/_benchmark-standard-self-training_conf.R)
 
-* in folder analysis/
-    * [analysis and visualization](analyze/analyze.R) 
-* in folder benchmarks/
-    * [global setup of experiments](benchmarks/run_benchmarks_simulated_data_p=60.R)
-* in folder benchmarks/experiments/
-    * [experiments with likelihood (max-max)](benchmarks/experiments/benchmark-dml-pred.R)
-    * [experiments with PPP (bayes-opt)](benchmarks/experiments/benchmark-dml-pred-ext.R)
-    * [experiments with **regularized** PPP (bayes-opt)](benchmarks/experiments/benchmark-dml-pred-reg.R)
-    * [experiments with supervised baseline](benchmarks/experiments/_benchmark-standard-supervised.R)
-    * [experiments with predictive variance](benchmarks/experiments/_benchmark-standard-self-training.R)
-    * [experiments with probability score](benchmarks/experiments/_benchmark-standard-self-training_conf.R)
+In order to reproduce results (and visualizations thereof) in Appendix A.1.2 "Illustrating Experiments" of our paper "Reciprocal Learning", run
 
+* [benchmarks/experiments_banknote.R](benchmarks/experiments_banknote.R)
 
-Eventually, download [benchmarks/experiments_simulated_data.R](benchmarks/experiments_simulated_data.R) and run from benchmarks/ (estimated runtime: 30 CPU hours)
-
-Important: Create empty folders [results](results) and [plots](plots) where experimental results will be stored automatically. In addition, you can access them as object after completion of the experiments.
+Important: Make sure you have folders [results](results) and [plots](plots) where experimental results will be stored automatically. In addition, you can access them as object after completion of the experiments.
 
 
 ### Further experiments
 
-Additional experimental setups can now easily be created by modifying [benchmarks/experiments_simulated_data.R](benchmarks/experiments_simulated_data.R)
+Additional illustrating experimental setups can now easily be created by modifying setup in [benchmarks/experiments_banknote.R](benchmarks/experiments_banknote.R)
 
 
-### Data
-
-Find data and files to read in data in folder [data](data). 
