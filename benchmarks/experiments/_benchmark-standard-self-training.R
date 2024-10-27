@@ -102,6 +102,14 @@ CI_fly <- apply(ind_fly, 1, get_CI_vec, alpha = 0.05, N=N)
 iteration_results <- vector("list", n_imp)
 iteration_results_sd <- vector("list", n_imp)
 
+# Initialize a list to store the L2 norms for each entry
+l2_norms <- list()
+# Loop over each second-level entry in the nested list
+for (i in seq_along(params_list)) {
+  l2_norms[[i]] <- sapply(params_list[[i]], function(x) sqrt(sum(x^2)))
+}
+
+
 # Loop through each iteration
 for (iteration in 1:n_imp) {
   # Extract results for the current iteration from all restarts
@@ -137,7 +145,8 @@ saved_results <- list("Inductive on-the-fly mean" = mean_ind_fly,
                       "Transductive n_test" = nrow(true_labels),
                       "Method" = method,
                       "parameters" =  params_means,
-                      "parameters_sd" =  params_sd
+                      "parameters_sd" =  params_sd,
+                      "l2norms" = l2_norms
                       
 )
 
