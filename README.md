@@ -4,7 +4,7 @@
 
 
 ### Introduction, TOC
-This repository contains code to reproduce experiments in Appendix A.1.2 "Illustrating Experiments" of our paper "Reciprocal Learning" (NeurIPS 2024)
+This repository contains code to reproduce experiments in Appendix C "Illustrative experiments on data regularization" of our paper "Reciprocal Learning" (NeurIPS 2024)
 
 * [R](R) contains implementation of BPLS with PPP and alternative PLS methods to benchmark against
 * [benchmarking](benchmarking) provides files for experiments, in order to reproduce results, see setup below
@@ -47,7 +47,7 @@ Experimental setups are in these files:
 * [experiments with predictive variance](benchmarks/experiments/_benchmark-standard-self-training.R)
 * [experiments with probability score](benchmarks/experiments/_benchmark-standard-self-training_conf.R)
 
-In order to reproduce results (and visualizations thereof) in Appendix A.1.2 "Illustrating Experiments" of our paper "Reciprocal Learning", run
+In order to reproduce results (and visualizations thereof) in Appendix C "Illustrative experiments on data regularization" of our paper "Reciprocal Learning", run
 
 * [benchmarks/experiments_banknote.R](benchmarks/experiments_banknote.R)
 
